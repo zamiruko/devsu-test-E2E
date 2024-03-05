@@ -13,6 +13,8 @@ import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStream;
+import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
 
 public class SeleniumFunctions {
@@ -242,15 +244,17 @@ public class SeleniumFunctions {
     public void waitForElementPresent(String element) throws Exception
     {
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
-        WebDriverWait w = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+        //WebDriverWait w = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
+        w.until(ExpectedConditions.elementToBeClickable(SeleniumElement));
         log.info("Esperando el elemento: " + element + " que este presente");
-        w.until(ExpectedConditions.presenceOfElementLocated(SeleniumElement));
     }
 
     public void waitForElementVisible(String element) throws Exception
     {
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
-        WebDriverWait w = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+        //WebDriverWait w = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT));
         log.info("Esperando el elemento: " + element + " que este visible");
         w.until(ExpectedConditions.visibilityOfElementLocated(SeleniumElement));
     }
@@ -286,14 +290,17 @@ public class SeleniumFunctions {
         String GetActual = driver.getCurrentUrl();
         System.out.println(String.format("Comprobando si la página está cargada.", GetActual));
         log.info(String.format("Comprobando si la página está cargada.", GetActual));
-        new WebDriverWait(driver, EXPLICIT_TIMEOUT).until(
+
+        //new WebDriverWait(driver, EXPLICIT_TIMEOUT).until(
+        new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT)).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
     public String GetTextElement(String element) throws Exception
     {
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
-        WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+        //WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT));
         wait.until(ExpectedConditions.presenceOfElementLocated(SeleniumElement));
         log.info(String.format("Esperando al elemento: %s", element));
 
@@ -308,10 +315,26 @@ public class SeleniumFunctions {
         Assert.assertTrue("El texto no está presente en el elemento: " + element + " el texto actual es: " + ElementText, isFound);
     }
 
-    public void clickOnElementWithAddDataReplace(String element, String text) throws Exception{
-        By SeleniumElement = SeleniumFunctions.getCompleteElementWithAddText(element, text);
-        driver.findElement(SeleniumElement).click();
-        log.info("Clic en el Elemento encontrado: " + element);
+    //public void clickOnElementWithAddDataReplace(String element, String text) throws Exception{
+    //    By SeleniumElement = SeleniumFunctions.getCompleteElementWithAddText(element, text);
+    //    driver.findElement(SeleniumElement).click();
+    //    log.info("Clic en el Elemento encontrado: " + element);
+    //}
+
+    public void acceptAlert() throws Exception {
+        //WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT));
+        wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
+        log.info("Alerta aceptada");
+    }
+
+    public int countElementsOfElement(String element) throws Exception{
+        By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
+        List<WebElement> elementsOnElement = driver.findElements(SeleniumElement);
+        int elementsNumber = elementsOnElement.size();
+
+        return elementsNumber;
     }
 
 }

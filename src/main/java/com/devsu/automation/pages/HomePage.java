@@ -13,17 +13,13 @@ import org.openqa.selenium.WebDriver;
 public class HomePage {
 
     private WebDriver driver;
-    SeleniumFunctions functions = new SeleniumFunctions();
+    private SeleniumFunctions functions = new SeleniumFunctions();
     //private JsonObject pageElements;
     private static String fileDOM = "HomePage.json";
-    private static String fileData = "FormData.json";
 
     public HomePage() throws Exception {
         this.driver = DriverManager.getDriver();
-        //functions.navigationToURL();
-        // this.pageElements = JsonLoader.loadPageElements("HomePage.json");
         functions.initializeFileJson(fileDOM);
-        functions.initializeFileJsonData(fileData);
     }
 
     /*
@@ -48,6 +44,7 @@ public class HomePage {
     }
 
     public void enterUsername(String username) throws Exception{
+        functions.initializeFileJson(fileDOM);
         functions.waitForElementPresent("UsernameText");
         functions.scrollToElement("UsernameText");
         functions.setTextOnElement("UsernameText", username);
@@ -55,6 +52,8 @@ public class HomePage {
     }
 
     public void enterPassword(String password) throws Exception{
+        functions.initializeFileJson(fileDOM);
+
         functions.waitForElementPresent("PasswordText");
         functions.scrollToElement("PasswordText");
         functions.setTextOnElement("PasswordText", password);
@@ -63,10 +62,39 @@ public class HomePage {
 
     public void clickLoginModalButton() throws Exception{
 //        getElement("LoginModalButton").click();
+        functions.initializeFileJson(fileDOM);
+
         functions.waitForElementPresent("LoginModalButton");
         functions.scrollToElement("LoginModalButton");
         functions.clickOnElement("LoginModalButton");
 
     }
+
+
+
+    public void selectProduct(String productNro) throws Exception{
+        functions.initializeFileJson(fileDOM);
+
+        functions.waitForElementPresent(productNro);
+        functions.scrollToElement(productNro);
+        functions.clickOnElement(productNro);
+    }
+
+    public void navigateToHomePage() throws Exception{
+        functions.initializeFileJson(fileDOM);
+        //functions.clickOnElement("HomeButton");
+    }
+
+    public void navigateToCartPage() throws Exception{
+        functions.initializeFileJson(fileDOM);
+
+        functions.clickOnElement("CartButton");
+    }
+
+    //public void addProductToCart() throws Exception{
+    //    functions.waitForElementPresent("AddToCartButton");
+    //    functions.clickOnElement("AddToCartButton");
+    //    functions.acceptAlert();
+    //}
 
 }

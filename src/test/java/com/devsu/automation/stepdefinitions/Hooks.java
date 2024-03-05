@@ -3,6 +3,7 @@ package com.devsu.automation.stepdefinitions;
 import com.devsu.automation.utils.ConfigLoader;
 import com.devsu.automation.utils.DriverManager;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import java.util.logging.Logger;
@@ -24,7 +25,7 @@ public class Hooks {
 
     @After
     public void afterScenario() {
-        // Limpia el WebDriver después de cada escenario
+        // Limpia el WebDriver al final de todo
         if (driver != null) {
             driver.quit();
         }

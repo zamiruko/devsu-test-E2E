@@ -5,7 +5,7 @@
   },
   "ProductsTable": {
     "GetFieldBy": "xpath",
-    "ValueToFind": "//*[@id='tbodyid']"
+    "ValueToFind": "/html/body/div[6]/div/div[1]/div/table/tbody/tr"
   },
   "PlaceOrderButton": {
     "GetFieldBy": "xpath",

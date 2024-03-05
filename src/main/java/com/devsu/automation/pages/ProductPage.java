@@ -3,6 +3,9 @@ package com.devsu.automation.pages;
 //import com.devsu.automation.utils.JsonLoader;
 //import org.openqa.selenium.By;
 //import org.openqa.selenium.WebDriver;
+import com.devsu.automation.utils.DriverManager;
+import com.devsu.automation.utils.SeleniumFunctions;
+import org.openqa.selenium.WebDriver;
 
 public class ProductPage {
 
@@ -44,4 +47,28 @@ public class ProductPage {
     }
 
  */
+    private WebDriver driver;
+    private SeleniumFunctions functions = new SeleniumFunctions();
+    private static String fileDOM = "ProductPage.json";
+
+    public ProductPage() throws Exception {
+        this.driver = DriverManager.getDriver();
+        functions.initializeFileJson(fileDOM);
+    }
+
+    public void addProductToCart() throws Exception {
+        functions.initializeFileJson(fileDOM);
+
+        functions.waitForElementPresent("AddToCartButton");
+        functions.scrollToElement("AddToCartButton");
+        functions.clickOnElement("AddToCartButton");
+        functions.acceptAlert();
+    }
+
+    public void navigateToHomePage() throws Exception{
+        functions.initializeFileJson(fileDOM);
+
+        functions.clickOnElement("HomeButton");
+    }
+
 }
