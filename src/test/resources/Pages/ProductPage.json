@@ -1,0 +1,14 @@
+{
+  "AddToCartButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[contains(text(),'Add to cart')]"
+  },
+  "HomeButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='navbarExample']/ul/li[1]/a"
+  },
+  "CartButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='cartur']"
+  }
+}

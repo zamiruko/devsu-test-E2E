@@ -1,0 +1,35 @@
+{
+  "LoginButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='login2']"
+  },
+  "UsernameText": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='loginusername']"
+  },
+  "PasswordText": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='loginpassword']"
+  },
+  "LoginModalButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='logInModal']/div/div/div[3]/button[2]"
+  },
+  "Product1Img": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='tbodyid']/div[1]/div/a/img"
+  },
+  "Product2Img": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='tbodyid']/div[2]/div/a/img"
+  },
+  "CartButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='cartur']"
+  },
+  "HomeButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='navbarExample']/ul/li[1]/a"
+  }
+}
+

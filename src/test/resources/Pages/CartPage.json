@@ -1,0 +1,46 @@
+{
+  "HomeButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='navbarExample']/ul/li[1]/a"
+  },
+  "ProductsTable": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='tbodyid']"
+  },
+  "PlaceOrderButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='page-wrapper']/div/div[2]/button"
+  },
+  "NameTextBox": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='name']"
+  },
+  "CountryTextBox": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='country']"
+  },
+  "CityTextBox": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='city']"
+  },
+  "CreditCardTextBox": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='card']"
+  },
+  "MonthTextBox": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='month']"
+  },
+  "YearTextBox": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id='year']"
+  },
+  "PurchaseButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//button[contains(text(),'Purchase')]"
+  },
+  "OKButton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//button[contains(text(),'OK')]"
+  }
+}
