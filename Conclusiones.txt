@@ -1,0 +1,28 @@
+
+Conclusiones del Ejercicio de Pruebas de Automatización
+
+1) Resumen de Ejecución de Pruebas
+
+A lo largo de la ejecución de pruebas automatizadas para el flujo de compra en la aplicación web, se han detectado varios aspectos importantes que requieren atención. Las pruebas automatizadas abarcaron escenarios de agregar productos al carrito, visualizar el carrito, completar el formulario de compra y finalizar la compra.
+
+2) Hallazgos Clave
+
+- Ausencia de Validación de Autenticación: Se observó que no existe una validación para verificar si el usuario ha iniciado sesión antes de realizar una compra, lo que podría permitir compras sin autenticación.
+
+- Validación de Formulario Incompleta: Durante el llenado del formulario de compra, no se valida la completitud de todos los campos, y tampoco se indica claramente cuáles son obligatorios con un asterisco o algún otro marcador.
+
+- Falta de Validación de Tipos de Datos: No hay verificaciones para asegurar que los datos ingresados en los campos del formulario sean del tipo correcto (numéricos, texto, etc.), lo que podría llevar a errores o inconsistencias en la información de compra.
+
+- Comprobación de Reportes: La revisión del reporte de Cucumber indica que todas las pruebas pasaron, lo cual es positivo. Sin embargo, la falta de validaciones como se mencionó anteriormente puede indicar que las pruebas no están cubriendo todos los casos críticos.
+
+3) Conclusiones y Recomendaciones
+
+- Implementar Verificación de Autenticación: Es crucial agregar una capa de autenticación para confirmar que el usuario ha iniciado sesión antes de cualquier operación de compra.
+
+- Reforzar Validaciones en Formulario: Se deben implementar validaciones completas en los campos del formulario para garantizar la captura de datos completos y correctos.
+
+- Mejorar Verificación de Tipos de Datos: Establecer validaciones de tipos de datos ayudará a mantener la integridad de la información y evitar errores en el proceso de compra.
+
+- Ampliar Cobertura de Pruebas: A pesar de que los reportes muestran éxito en las pruebas realizadas, es importante asegurarse de que las pruebas cubran todas las validaciones y comportamientos esperados, incluyendo casos negativos y de error.
+
+Es vital trabajar en conjunto con el equipo de desarrollo para priorizar estas mejoras y asegurar la robustez y fiabilidad del flujo de compra en la aplicación web.
