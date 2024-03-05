@@ -1,16 +1,19 @@
 package com.devsu.automation.pages;
 
-import com.devsu.automation.utils.JsonLoader;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+//import com.devsu.automation.utils.JsonLoader;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
 
 public class ProductPage {
 
+    /*
     private WebDriver driver;
     private By addToCartButton;
     private By homeButton;
     private By productConfirmationModal;
     private By productConfirmationOkButton;
+
+
 
     public ProductPage(WebDriver driver) {
         this.driver = driver;
@@ -39,4 +42,6 @@ public class ProductPage {
         driver.findElement(homeButton).click();
         // Aquí iría el código para asegurarse de que la navegación ha sido exitosa
     }
+
+ */
 }

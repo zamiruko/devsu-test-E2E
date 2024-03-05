@@ -1,16 +1,21 @@
 package com.devsu.automation.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.apache.log4j.Logger;
+
+import java.io.IOException;
 
 public class DriverManager {
 
-    private static WebDriver driver;
+    public static WebDriver driver;
+    private static Logger log = Logger.getLogger(DriverManager.class);
 
-    public static void initializeDriver() {
+    public static void initializeDriver() throws IOException {
         if (driver == null) {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options = new FirefoxOptions();
@@ -19,7 +24,7 @@ public class DriverManager {
         }
     }
 
-    public static WebDriver getDriver() {
+    public static WebDriver getDriver() throws IOException {
         if (driver == null) {
             initializeDriver();
         }

@@ -1,20 +1,23 @@
 package com.devsu.automation.stepdefinitions;
 
 import com.devsu.automation.pages.HomePage;
-import com.devsu.automation.utils.ConfigLoader;
-import com.devsu.automation.utils.DriverManager;
+//import com.devsu.automation.utils.ConfigLoader;
+//import com.devsu.automation.utils.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
-import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebDriver;
 
 public class LoginSteps {
 
     HomePage homePage = new HomePage();
 
+    public LoginSteps() throws Exception {
+    }
+
     @Given("I am on the homepage")
-    public void iAmOnTheHomepage() throws InterruptedException {
+    public void iAmOnTheHomepage() throws Exception {
 
         //homePage.wait(10);
 
@@ -22,23 +25,23 @@ public class LoginSteps {
     }
 
     @When("I click the login button")
-    public void iClickTheLoginButton() {
+    public void iClickTheLoginButton() throws Exception {
         homePage.clickLoginButton();
     }
 
     @And("I enter the username {string} and password {string}")
-    public void iEnterTheUsernameAndPassword(String username, String password) {
+    public void iEnterTheUsernameAndPassword(String username, String password) throws Exception {
         homePage.enterUsername(username);
         homePage.enterPassword(password);
     }
 
     @And("I click the login modal button")
-    public void iClickTheLoginModalButton() {
+    public void iClickTheLoginModalButton() throws Exception {
         homePage.clickLoginModalButton();
     }
 
     @Then("I should be logged in")
-    public void iShouldBeLoggedIn() {
+    public void iShouldBeLoggedIn() throws Exception {
         // Aquí puedes poner aserciones para verificar que el usuario esté logueado correctamente
     }
 
