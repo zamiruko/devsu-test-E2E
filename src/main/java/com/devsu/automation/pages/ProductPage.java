@@ -13,7 +13,7 @@ public class ProductPage {
     private SeleniumFunctions functions = new SeleniumFunctions();
     private static String fileDOM = "ProductPage.json";
 
-    public ProductPage() throws Exception {
+    public ProductPage() {
         try {
             this.driver = DriverManager.getDriver();
             functions.initializeFileJson(fileDOM);
@@ -23,7 +23,7 @@ public class ProductPage {
         }
     }
 
-    public void addProductToCart() throws Exception {
+    public void addProductToCart() {
         try {
             functions.initializeFileJson(fileDOM);
 
@@ -37,7 +37,7 @@ public class ProductPage {
         }
     }
 
-    public void navigateToHomePage() throws Exception{
+    public void navigateToHomePage() {
         try {
             functions.initializeFileJson(fileDOM);
             functions.clickOnElement("HomeButton");

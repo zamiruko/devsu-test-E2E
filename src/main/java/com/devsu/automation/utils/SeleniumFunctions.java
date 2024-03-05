@@ -173,7 +173,7 @@ public class SeleniumFunctions {
         return ElementText;
     }
 
-    public void acceptAlert() throws Exception {
+    public void acceptAlert() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT));
         wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();

@@ -13,7 +13,7 @@ public class CartPage {
     private SeleniumFunctions functions = new SeleniumFunctions();
     private static String fileDOM = "CartPage.json";
 
-    public CartPage() throws Exception {
+    public CartPage(){
         try{
             this.driver = DriverManager.getDriver();
             functions.initializeFileJson(fileDOM);
@@ -24,7 +24,7 @@ public class CartPage {
 
     }
 
-    public void clickOnPlaceOrderButton() throws Exception {
+    public void clickOnPlaceOrderButton(){
         try {
             functions.initializeFileJson(fileDOM);
 
@@ -37,7 +37,7 @@ public class CartPage {
         }
     }
 
-    public void completeDataOnForm(String element, String data) throws Exception {
+    public void completeDataOnForm(String element, String data) {
         try {
             functions.initializeFileJson(fileDOM);
 
@@ -69,7 +69,7 @@ public class CartPage {
         }
     }
 
-    public void clickOnPurchaseButton() throws Exception {
+    public void clickOnPurchaseButton() {
         try {
             functions.initializeFileJson(fileDOM);
 
@@ -81,7 +81,7 @@ public class CartPage {
             throw new RuntimeException("Failed to clicking on Purchase Button: ", e);
         }
     }
-    public boolean reviewProductsOnTable(String table, int nProducts) throws Exception{
+    public boolean reviewProductsOnTable(String table, int nProducts) {
         try {
             functions.initializeFileJson(fileDOM);
 
@@ -99,7 +99,7 @@ public class CartPage {
             throw new RuntimeException("Failed to review Products on table: ", e);
         }
     }
-    public void finalizePurchaseOkButton() throws Exception {
+    public void finalizePurchaseOkButton() {
         try {
             functions.initializeFileJson(fileDOM);
 

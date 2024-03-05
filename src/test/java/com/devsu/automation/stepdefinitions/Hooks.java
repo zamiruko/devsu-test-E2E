@@ -1,15 +1,12 @@
 package com.devsu.automation.stepdefinitions;
 
-import com.devsu.automation.pages.CartPage;
 import com.devsu.automation.utils.ConfigLoader;
 import com.devsu.automation.utils.DriverManager;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
-import java.io.IOException;
 
 public class Hooks {
 
@@ -17,7 +14,7 @@ public class Hooks {
     public static Logger log = Logger.getLogger(Hooks.class);
 
     @Before
-    public void beforeScenario() throws IOException {
+    public void beforeScenario() {
         log.info("[Configuration] - Inicializa el WebDriver antes de cada escenario");
         try {
             driver = DriverManager.getDriver();

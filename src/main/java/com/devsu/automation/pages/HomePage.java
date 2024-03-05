@@ -13,7 +13,7 @@ public class HomePage {
     private SeleniumFunctions functions = new SeleniumFunctions();
     private static String fileDOM = "HomePage.json";
 
-    public HomePage() throws Exception {
+    public HomePage() {
         try {
             this.driver = DriverManager.getDriver();
             functions.initializeFileJson(fileDOM);
@@ -23,7 +23,7 @@ public class HomePage {
         }
     }
 
-    public void clickLoginButton() throws Exception{
+    public void clickLoginButton() {
         try {
             functions.waitForElementPresent("LoginButton");
             functions.scrollToElement("LoginButton");
@@ -34,7 +34,7 @@ public class HomePage {
         }
     }
 
-    public void enterUsername(String username) throws Exception{
+    public void enterUsername(String username) {
         try{
         functions.initializeFileJson(fileDOM);
 
@@ -48,7 +48,7 @@ public class HomePage {
         }
     }
 
-    public void enterPassword(String password) throws Exception{
+    public void enterPassword(String password) {
         try {
             functions.initializeFileJson(fileDOM);
 
@@ -62,7 +62,7 @@ public class HomePage {
         }
     }
 
-    public void clickLoginModalButton() throws Exception{
+    public void clickLoginModalButton() {
         try {
             functions.initializeFileJson(fileDOM);
 
@@ -77,7 +77,7 @@ public class HomePage {
 
 
 
-    public void selectProduct(String productNro) throws Exception{
+    public void selectProduct(String productNro) {
         try {
             functions.initializeFileJson(fileDOM);
 
@@ -90,7 +90,7 @@ public class HomePage {
         }
     }
 
-    public void navigateToHomePage() throws Exception{
+    public void navigateToHomePage() {
         try {
             functions.initializeFileJson(fileDOM);
             //functions.clickOnElement("HomeButton");
@@ -100,7 +100,7 @@ public class HomePage {
         }
     }
 
-    public void navigateToCartPage() throws Exception{
+    public void navigateToCartPage() {
         try {
             functions.initializeFileJson(fileDOM);
 

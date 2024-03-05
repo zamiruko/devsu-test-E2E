@@ -8,16 +8,16 @@ public class ProductPageSteps {
 
     ProductPage productPage;
 
-    public ProductPageSteps() throws Exception{
+    public ProductPageSteps() {
         productPage = new ProductPage();
     }
 
     @And("Agrego el producto al carrito")
-    public void agregoElProductoAlCarrito() throws Exception{
+    public void agregoElProductoAlCarrito() {
         productPage.addProductToCart();
     }
     @When("Vuelvo a la pagina principal")
-    public void vuelvoALaPaginaPrincipal() throws Exception {
+    public void vuelvoALaPaginaPrincipal() {
         productPage.navigateToHomePage();
     }
 }

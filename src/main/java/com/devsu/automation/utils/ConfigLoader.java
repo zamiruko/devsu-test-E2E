@@ -12,7 +12,7 @@ public class ConfigLoader {
     private static Logger log = Logger.getLogger(ConfigLoader.class);
 
 
-    private ConfigLoader()  throws IOException{
+    private ConfigLoader() {
         properties = new Properties();
         try (InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties")) {
             properties.load(input);
@@ -22,7 +22,7 @@ public class ConfigLoader {
         }
     }
 
-    public static ConfigLoader load() throws IOException {
+    public static ConfigLoader load() {
         return new ConfigLoader();
     }
 
