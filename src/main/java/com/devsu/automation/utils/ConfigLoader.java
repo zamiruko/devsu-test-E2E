@@ -18,6 +18,7 @@ public class ConfigLoader {
             properties.load(input);
         } catch (IOException e) {
             log.error("Unable to load config properties", e);
+            throw new RuntimeException("Failed to load configuration properties.", e);
         }
     }
 

@@ -4,7 +4,6 @@ import com.devsu.automation.pages.CartPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en.Given;
 
 public class CartPageSteps {
 
@@ -22,7 +21,6 @@ public class CartPageSteps {
         }else {
             throw new RuntimeException("This step is designed to fail, because not allow 2 Products");
         }
-
     }
     @When("Abro el formulario de compra")
     public void abroElFormularioDeCompra() throws Exception{
@@ -32,21 +30,6 @@ public class CartPageSteps {
     @And("^Lleno el campo (.*) con el dato (.*)")
     public void llenoElCampoConElDato(String element, String data) throws Exception{
         cartPage.completeDataOnForm(element,data);
-    }
-
-    @Then("Debería tener el formulario lleno")
-    public void deberíaTenerElFormularioLleno() throws Exception{
-        //boolean formComplete = cartPage.formIsComplete();
-        //if(formComplete){
-            //FormComplete
-        //}else {
-        //    throw new RuntimeException("This step is designed to fail, because the form is not complete.");
-        //}
-    }
-
-    @Given("Estoy en la pagina del carrito con el formulario completado")
-    public void estoyEnLaPaginaDelCarritoConElFormularioCompletado() throws Exception{
-        //No Necesario codigo
     }
 
     @When("Hago click en el botón de realizar pedido")

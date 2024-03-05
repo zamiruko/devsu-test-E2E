@@ -17,10 +17,15 @@ public class DriverManager {
 
     public static void initializeDriver() throws IOException {
         if (driver == null) {
-            WebDriverManager.firefoxdriver().setup();
-            FirefoxOptions options = new FirefoxOptions();
-            driver = new FirefoxDriver(options);
-            driver.manage().window().maximize();
+            try {
+                WebDriverManager.firefoxdriver().setup();
+                FirefoxOptions options = new FirefoxOptions();
+                driver = new FirefoxDriver(options);
+                driver.manage().window().maximize();
+            } catch (Exception e) {
+                log.error("Failed to initialize the web driver: ", e);
+                throw new RuntimeException("Driver initialization failed", e);
+            }
         }
     }
 

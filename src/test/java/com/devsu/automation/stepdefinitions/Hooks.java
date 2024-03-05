@@ -1,31 +1,36 @@
 package com.devsu.automation.stepdefinitions;
 
+import com.devsu.automation.pages.CartPage;
 import com.devsu.automation.utils.ConfigLoader;
 import com.devsu.automation.utils.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import java.util.logging.Logger;
+
 import java.io.IOException;
 
 public class Hooks {
 
     private WebDriver driver;
-    Logger log = Logger.getLogger(String.valueOf(Hooks.class));
+    public static Logger log = Logger.getLogger(Hooks.class);
 
     @Before
     public void beforeScenario() throws IOException {
         log.info("[Configuration] - Inicializa el WebDriver antes de cada escenario");
-
-        driver = DriverManager.getDriver();
-        String baseUrl = ConfigLoader.load().getBaseUrl();
-        driver.get(baseUrl);
+        try {
+            driver = DriverManager.getDriver();
+            String baseUrl = ConfigLoader.load().getBaseUrl();
+            driver.get(baseUrl);
+        } catch (Exception e) {
+            log.error("Failed to initialize the web driver on Hooks before Scenario: ", e);
+            throw new RuntimeException("Driver initialization failed on Hooks before Scenario", e);
+        }
     }
 
     @After
     public void afterScenario() {
-        // Limpia el WebDriver al final de todo
         if (driver != null) {
             driver.quit();
         }
